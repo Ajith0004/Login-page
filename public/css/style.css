@@ -1,0 +1,70 @@
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Tiled layer to fill blank white spaces */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/background.jpg') repeat;
+  background-size: 800px; /* Adjust as needed */
+  z-index: -2;
+}
+
+/* Centered, high-quality image */
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: contain;
+  z-index: -1;
+}
+
+/* Login form container */
+form {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Input styles */
+input.form-control {
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* Button styling */
+button.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
